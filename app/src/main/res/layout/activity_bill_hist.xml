@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_1"
+    android:orientation="vertical"
+    tools:context=".OrderActivity">
+
+    <TextView
+        android:id="@+id/bill_his_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif-black"
+        android:padding="5dp"
+        android:text="Billing History:"
+        android:textColor="@color/red_orange"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/click_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif-black"
+        android:padding="5dp"
+        android:text="Click to Know More"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bill_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-72dp"
+        tools:listitem="@layout/bill_project" />
+
+
+</LinearLayout>
