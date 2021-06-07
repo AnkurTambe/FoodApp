@@ -1,2 +1,0 @@
-# FoodApp
-Android Studio
