@@ -18,17 +18,19 @@ class PayActivity : AppCompatActivity() {
 
         main_total.text = "$ $t"
 
-        btn_cod.setOnClickListener {
-            type = "c"
+        btn_paytm.setOnClickListener {
+            type = "pt"
             var i = Intent(this, ConfirmActivity::class.java)
             i.putExtra("t", type)
+            i.putExtra("b", t)
             startActivity(i)
         }
 
         btn_paypal.setOnClickListener {
-            type = "p"
+            type = "pp"
             var i = Intent(this, ConfirmActivity::class.java)
             i.putExtra("t", type)
+            i.putExtra("b", t)
             startActivity(i)
         }
 

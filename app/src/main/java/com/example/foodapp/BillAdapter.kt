@@ -20,9 +20,6 @@ class BillAdapter(var context: Context, var list: ArrayList<BillDet>) :
             list[position].srno,
             list[position].billid,
             list[position].billcredate,
-            list[position].payment,
-            list[position].paymenttime,
-            list[position].delivery
         )
     }
 
@@ -31,14 +28,11 @@ class BillAdapter(var context: Context, var list: ArrayList<BillDet>) :
     }
 
     class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(s: String, b: String, bd: String, p: String, pt: String, d: String) {
+        fun bind(s: String, b: String, bd: String) {
 
             itemView.srno1.text = s
             itemView.billid1.text = b
             itemView.billcredate1.text = bd
-            itemView.payment1.text = p
-            itemView.paymenttime1.text = pt
-            itemView.delivery1.text = d
 
             itemView.bill_cv.setOnClickListener {
 

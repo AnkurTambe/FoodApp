@@ -133,7 +133,7 @@
                 android:layout_toEndOf="@id/card_view_image_holder"
                 android:layout_toRightOf="@id/card_view_image_holder"
                 android:fontFamily="sans-serif-medium"
-                android:text="Proceed"
+                android:text="Pay"
                 android:textColor="@color/black" />
 
 
@@ -171,7 +171,7 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cod" />
+                    android:src="@drawable/paytm" />
 
             </androidx.cardview.widget.CardView>
 
@@ -185,13 +185,13 @@
                 android:layout_toEndOf="@id/card_view_image_holder2"
                 android:layout_toRightOf="@id/card_view_image_holder2"
                 android:fontFamily="sans-serif-black"
-                android:text="Cash On Delivery:"
+                android:text="Pay using Paytm:"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
 
             <Button
-                android:id="@+id/btn_cod"
+                android:id="@+id/btn_paytm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title2"
@@ -204,7 +204,7 @@
                 android:layout_toEndOf="@id/card_view_image_holder2"
                 android:layout_toRightOf="@id/card_view_image_holder2"
                 android:fontFamily="sans-serif-medium"
-                android:text="Proceed"
+                android:text="Pay"
                 android:textColor="@color/black" />
 
 

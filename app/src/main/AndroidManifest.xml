@@ -9,6 +9,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp"
@@ -16,57 +17,81 @@
         tools:targetApi="m">
         <activity
             android:name=".BillDetActivity"
-            android:label="Bill Data"
+            android:configChanges="orientation|screenSize"
+            android:label="Bill Data:"
             android:parentActivityName=".BillHistActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".BillHistActivity"
-            android:label="Billing Info."
+            android:configChanges="orientation|screenSize"
+            android:label="Billing Info.:"
             android:parentActivityName=".ProfileActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".ProfileActivity"
-            android:label="User Info."
+            android:configChanges="orientation|screenSize"
+            android:label="User Info.:"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".ConfirmActivity"
-            android:label="Confirmation"
+            android:configChanges="orientation|screenSize"
+            android:label="Confirmation:"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".PayActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Payment Options:"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".BillActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Your Bill:"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".OrderActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Your Cart:"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".QtyActivity"
+            android:configChanges="orientation|screenSize"
             android:label="You Have Selected:"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".ItemActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Items"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".HomeActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Food App Menu"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".RegisterActivity"
+            android:configChanges="orientation|screenSize"
             android:label="Sign Up"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

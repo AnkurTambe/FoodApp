@@ -23,31 +23,11 @@ class BillHistActivity : AppCompatActivity() {
 
             for (x in 0 until response.length()) {
 
-                var p: String = response.getJSONObject(x).getInt("payment").toString()
-                var d: String = response.getJSONObject(x).getInt("delivery").toString()
-                var pt: String = response.getJSONObject(x).getString("payment_time")
-
-                if (p == "0") {
-                    p = "not done"
-                    pt = "payment not done"
-                } else if (p == "1") {
-                    p = "done"
-                }
-
-                if (d == "0") {
-                    d = "not done"
-                } else if (p == "1") {
-                    d = "done"
-                }
-
                 list.add(
                     BillDet(
                         ((x + 1).toString()),
                         response.getJSONObject(x).getInt("bill_no").toString(),
                         response.getJSONObject(x).getString("bill_date"),
-                        p,
-                        pt,
-                        d
                     )
                 )
             }

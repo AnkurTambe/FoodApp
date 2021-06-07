@@ -51,42 +51,54 @@ class OrderActivity : AppCompatActivity() {
 
         btn_confirm.setOnClickListener {
 
-            var url =
-                "http://192.168.0.197/FoodAppPhp/confirm_order.php?mobileno=" + UserInfo.mobile
-            var rq: RequestQueue = Volley.newRequestQueue(this)
-            var sr = StringRequest(Request.Method.GET, url, { response ->
+            if (list.isEmpty()) {
+                Toast.makeText(this, "Cart is Empty", Toast.LENGTH_SHORT).show()
+            } else {
 
-                Toast.makeText(this, "Items shifted from Cart to Bill list", Toast.LENGTH_SHORT).show()
+                var url =
+                    "http://192.168.0.197/FoodAppPhp/confirm_order.php?mobileno=" + UserInfo.mobile
+                var rq: RequestQueue = Volley.newRequestQueue(this)
+                var sr = StringRequest(Request.Method.GET, url, { response ->
 
-                var i = Intent(this, BillActivity::class.java)
-                i.putExtra("bno", response)
-                startActivity(i)
+                    Toast.makeText(this, "Items shifted from Cart to Bill list", Toast.LENGTH_SHORT)
+                        .show()
 
-            }, { error ->
-                Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
-            })
+                    var i = Intent(this, BillActivity::class.java)
+                    i.putExtra("bno", response)
+                    startActivity(i)
 
-            rq.add(sr)
+                }, { error ->
+                    Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
+                })
+
+                rq.add(sr)
+            }
 
         }
 
         btn_cancel.setOnClickListener {
-            var url = "http://192.168.0.197/FoodAppPhp/cancel_order.php?mobileno=" + UserInfo.mobile
+            if (list.isEmpty()) {
+                Toast.makeText(this, "Cart is Empty", Toast.LENGTH_SHORT).show()
+            } else {
 
-            var rq: RequestQueue = Volley.newRequestQueue(this)
-            var sr = StringRequest(Request.Method.GET, url, { response ->
+                var url =
+                    "http://192.168.0.197/FoodAppPhp/cancel_order.php?mobileno=" + UserInfo.mobile
 
-                Toast.makeText(this, "Cart Emptied!", Toast.LENGTH_SHORT)
-                    .show()
+                var rq: RequestQueue = Volley.newRequestQueue(this)
+                var sr = StringRequest(Request.Method.GET, url, { response ->
 
-                var i = Intent(this, OrderActivity::class.java)
-                startActivity(i)
+                    Toast.makeText(this, "Cart Emptied!", Toast.LENGTH_SHORT)
+                        .show()
 
-            }, { error ->
-                Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
-            })
+                    var i = Intent(this, OrderActivity::class.java)
+                    startActivity(i)
 
-            rq.add(sr)
+                }, { error ->
+                    Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
+                })
+
+                rq.add(sr)
+            }
 
         }
     }
