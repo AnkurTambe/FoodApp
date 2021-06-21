@@ -18,7 +18,7 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_temp.php?mobileno=${UserInfo.mobile}"
+        var url = "http://" + UserInfo.ip + "/FoodAppPhp/get_temp.php?mobileno=${UserInfo.mobile}"
         var list = ArrayList<temp_item>()
 
         var rq: RequestQueue = Volley.newRequestQueue(this)
@@ -56,7 +56,7 @@ class OrderActivity : AppCompatActivity() {
             } else {
 
                 var url =
-                    "http://192.168.0.197/FoodAppPhp/confirm_order.php?mobileno=" + UserInfo.mobile
+                    "http://" + UserInfo.ip + "/FoodAppPhp/confirm_order.php?mobileno=" + UserInfo.mobile
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 var sr = StringRequest(Request.Method.GET, url, { response ->
 
@@ -82,7 +82,7 @@ class OrderActivity : AppCompatActivity() {
             } else {
 
                 var url =
-                    "http://192.168.0.197/FoodAppPhp/cancel_order.php?mobileno=" + UserInfo.mobile
+                    "http://" + UserInfo.ip + "/FoodAppPhp/cancel_order.php?mobileno=" + UserInfo.mobile
 
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 var sr = StringRequest(Request.Method.GET, url, { response ->

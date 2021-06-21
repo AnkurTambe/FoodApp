@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 if (reg_password.text.toString() == reg_confirm_password.text.toString()) {
                     var url =
-                        "http://192.168.0.197/FoodAppPhp/add_user.php?mobileno=" + reg_mobile_no.text.toString() + "&password=" +
+                        "http://" + UserInfo.ip + "/FoodAppPhp/add_user.php?mobileno=" + reg_mobile_no.text.toString() + "&password=" +
                                 reg_password.text.toString() + "&name=" + reg_name.text.toString() + "&address=" + reg_address.text.toString()
 
                     var rq: RequestQueue = Volley.newRequestQueue(this)

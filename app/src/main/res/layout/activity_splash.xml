@@ -7,26 +7,113 @@
     android:layout_height="match_parent"
     android:background="@color/red_orange">
 
+    <RelativeLayout
+        android:id="@+id/splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
-    <ImageView
-        android:id="@+id/ss_img"
+        <ImageView
+            android:id="@+id/ss_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fa_icon_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ss_img"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Food App"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:elevation="10dp"
+        android:id="@+id/dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fa_icon_circle" />
+        android:layout_margin="50dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:visibility="invisible">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ss_img"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:text="Food App"
-        android:fontFamily="sans-serif-condensed-light"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="IP Address"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t1"
+            android:layout_marginBottom="5dp"
+            android:text="Ensure that this device and the PC(hosting WAMP server) are connected to the same WIFI network."
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t2"
+            android:layout_marginBottom="10dp"
+            android:text="Enter the IPv4 Address of the corresponding WLAN."
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/et1"
+            style="@style/Theme.FoodApp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/t3"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_input_1"
+            android:drawableStart="@drawable/ip"
+            android:drawableLeft="@drawable/ip"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:hint="Enter IP Address"
+            android:inputType="phone"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp"
+            tools:text="192.67.109.342" />
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et1"
+            android:layout_alignParentRight="true"
+            android:text="Proceed" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et1"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/b1"
+            android:text="Exit" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

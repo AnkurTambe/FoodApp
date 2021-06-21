@@ -33,7 +33,7 @@ class ItemAdapter(var context: Context, var list: ArrayList<Item>) :
         fun bind(n: String, p: Double, u: String, i: Int) {
             itemView.title.text = n
             itemView.price.text = "$ ${p.toString()}"
-            var web: String = "http://192.168.0.197/FoodAppPhp/images/$u"
+            var web: String = "http://" + UserInfo.ip + "/FoodAppPhp/images/$u"
             web = web.replace(" ", "%20")
             Picasso.get().load(web).into(itemView.item_image)
 

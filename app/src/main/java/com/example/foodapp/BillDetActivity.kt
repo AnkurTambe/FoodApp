@@ -22,7 +22,7 @@ class BillDetActivity : AppCompatActivity() {
         var tot: String? = ""
 
 
-        var url1 = "http://192.168.0.197/FoodAppPhp/get_total.php?bill_no=$billno"
+        var url1 = "http://" + UserInfo.ip + "/FoodAppPhp/get_total.php?bill_no=$billno"
         var rq1: RequestQueue = Volley.newRequestQueue(this)
         var sr1 = StringRequest(Request.Method.GET, url1, { response ->
 
@@ -35,7 +35,7 @@ class BillDetActivity : AppCompatActivity() {
         rq1.add(sr1)
 
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_bill.php?bill_no=$billno"
+        var url = "http://" + UserInfo.ip + "/FoodAppPhp/get_bill.php?bill_no=$billno"
 
         var list = ArrayList<String>()
         var rq: RequestQueue = Volley.newRequestQueue(this)

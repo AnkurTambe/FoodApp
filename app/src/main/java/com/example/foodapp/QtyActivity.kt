@@ -19,7 +19,7 @@ class QtyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_qty)
 
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_dialog_item.php?id=${UserInfo.itemid}"
+        var url = "http://" + UserInfo.ip + "/FoodAppPhp/get_dialog_item.php?id=${UserInfo.itemid}"
 
         var rq: RequestQueue = Volley.newRequestQueue(this)
         var jar = JsonArrayRequest(Request.Method.GET, url, null, { response ->
@@ -28,7 +28,7 @@ class QtyActivity : AppCompatActivity() {
             d_price.text = "$ " + response.getJSONObject(0).getString("price")
             val u = response.getJSONObject(0).getString("photo")
 
-            var web: String = "http://192.168.0.197/FoodAppPhp/images/$u"
+            var web: String = "http://" + UserInfo.ip + "/FoodAppPhp/images/$u"
             web = web.replace(" ", "%20")
             Picasso.get().load(web).into(d_item_image)
 
@@ -44,7 +44,7 @@ class QtyActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter Proper Value", Toast.LENGTH_SHORT).show()
             } else {
                 var url =
-                    "http://192.168.0.197/FoodAppPhp/add_temp.php?mobile=" + UserInfo.mobile + "&itemid=" + UserInfo.itemid +
+                    "http://" + UserInfo.ip + "/FoodAppPhp/add_temp.php?mobile=" + UserInfo.mobile + "&itemid=" + UserInfo.itemid +
                             "&qty=" + et_qty.text.toString()
 
                 var rq: RequestQueue = Volley.newRequestQueue(this)

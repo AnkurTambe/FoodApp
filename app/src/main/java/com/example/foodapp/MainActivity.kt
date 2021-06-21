@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 Toast.makeText(this, "Give Proper Info.", Toast.LENGTH_SHORT).show();
             } else {
-                var url = //192.168.0.197
+                var url = //
                 "http://" + UserInfo.ip + "/FoodAppPhp/login.php?mobileno=" + login_mobile_no.text.toString() + "&password=" +
                         login_password.text.toString()
 

@@ -22,7 +22,7 @@ class ItemActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item)
 
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_items.php?category=$cat"
+        var url = "http://" + UserInfo.ip + "/FoodAppPhp/get_items.php?category=$cat"
         var list1 = ArrayList<Item>()
 
         var rq: RequestQueue = Volley.newRequestQueue(this)

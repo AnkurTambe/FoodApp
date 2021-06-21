@@ -133,6 +133,19 @@
                 android:padding="15dp"
                 android:text="SHOW BILLING HISTORY"
                 android:textColor="@color/white" />
+            <Button
+                android:id="@+id/ci_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_his_btn"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@color/red_orange"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="CHANGE IP ADDRESS"
+                android:textColor="@color/white" />
+
 
         </RelativeLayout>
 

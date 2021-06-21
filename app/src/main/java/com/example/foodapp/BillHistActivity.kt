@@ -15,7 +15,7 @@ class BillHistActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bill_hist)
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_bill_his.php?mobileno=${UserInfo.mobile}"
+        var url = "http://" + UserInfo.ip + "/FoodAppPhp/get_bill_his.php?mobileno=${UserInfo.mobile}"
         var list = ArrayList<BillDet>()
 
         var rq: RequestQueue = Volley.newRequestQueue(this)

@@ -21,7 +21,8 @@ class ProfileActivity : AppCompatActivity() {
         var token = getSharedPreferences("mobno", Context.MODE_PRIVATE)
 
 
-        var url = "http://192.168.0.197/FoodAppPhp/get_profile.php?mobileno=${UserInfo.mobile}"
+        var url =
+            "http://" + UserInfo.ip + "/FoodAppPhp/get_profile.php?mobileno=${UserInfo.mobile}"
 
         var rq: RequestQueue = Volley.newRequestQueue(this)
         var jar = JsonArrayRequest(Request.Method.GET, url, null, { response ->
@@ -67,5 +68,15 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this, BillHistActivity::class.java))
 
         }
+
+        ci_btn.setOnClickListener {
+            openDialog()
+        }
+    }
+
+    private fun openDialog() {
+        var exampleDialog = ExampleDialog()
+        exampleDialog.isCancelable = false
+        exampleDialog.show(supportFragmentManager, "example dialog")
     }
 }

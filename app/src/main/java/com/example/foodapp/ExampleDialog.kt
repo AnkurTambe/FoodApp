@@ -29,7 +29,7 @@ class ExampleDialog : AppCompatDialogFragment() {
         alert.setView(view)
         alert.setCancelable(false)
         alert.setTitle("IP Address")
-        alert.setMessage("Ensure that this device and the PC(hosting WAMP server) are connected to the same WIFI network.\nEnter the IPv4 Address of the corresponding WLAN.")
+        alert.setMessage("Ensure that this device and the PC(hosting WAMP server) are connected to the same WIFI network.\nEnter the IPv4 Address of the corresponding WLAN.\n ")
         ip = view!!.findViewById(R.id.et_ip)
         ip.setText(ipadd?.getString("ipc", " "))
         alert.setPositiveButton(
@@ -37,7 +37,6 @@ class ExampleDialog : AppCompatDialogFragment() {
         ) { dialogInterface, i ->
 
             if (ip.text.isBlank() || ip.text.isEmpty()) {
-                UserInfo.ip = ipadd?.getString("ipc", " ").toString()
                 Toast.makeText(
                     activity,
                     "Give proper IP, else previous entered IP will be considered.",
@@ -48,7 +47,7 @@ class ExampleDialog : AppCompatDialogFragment() {
                 ipadd!!.edit().putString("ipc", ip.text.toString()).apply()
                 UserInfo.ip = ipadd?.getString("ipc", " ").toString()
             }
-            Toast.makeText(activity, UserInfo.ip, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, UserInfo.ip, Toast.LENGTH_SHORT).show()
 
         }
         alert.setNegativeButton(
