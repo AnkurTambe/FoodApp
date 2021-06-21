@@ -1,7 +1,7 @@
 # FoodApp
 Food-Ordering Android App
 Android Studio
-APIs|LogIn|SigUp|HomePage|Menu|RecyclerView|Cart|Payment|Confirmation|Notification|BillHistory|
+APIs|LogIn|SignUp|HomePage|Menu|RecyclerView|Cart|Payment|Confirmation|Notification|BillHistory|
 
 WAMP-- Windows, Apache, MySQL, PHP
 
