@@ -3,6 +3,8 @@ Food-Ordering Android App
 Android Studio
 APIs|LogIn|SigUp|HomePage|Menu|RecyclerView|Cart|Payment|Confirmation|Notification|BillHistory|
 
+WAMP-- Windows, Apache, MySQL, PHP
+
 *APK is the Release section*
 
 The App is based on WAMP local server so, to see the full execution of the app you have to first do following things:
