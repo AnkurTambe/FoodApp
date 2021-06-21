@@ -11,7 +11,6 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_qty.*
-import kotlinx.android.synthetic.main.item_project.view.*
 
 class QtyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

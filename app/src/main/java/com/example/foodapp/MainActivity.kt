@@ -1,10 +1,7 @@
 package com.example.foodapp
 
-import android.content.Context
 import android.content.Intent
-import android.net.wifi.WifiManager
 import android.os.Bundle
-import android.text.format.Formatter
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -14,8 +11,6 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_register.*
-import java.util.*
 import kotlin.system.exitProcess
 
 
