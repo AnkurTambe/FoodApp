@@ -58,14 +58,35 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="Create an Account!"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Create an Account!"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <Button
+                                android:id="@+id/reg_cip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:background="@color/red_orange"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Change IP."
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
 
                         <EditText
                             android:id="@+id/reg_mobile_no"
@@ -173,9 +194,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:background="@color/red_orange"
                             android:fontFamily="sans-serif-black"
                             android:paddingTop="20dp"
-                            android:background="@color/red_orange"
                             android:paddingBottom="20dp"
                             android:text="Sign Up"
                             android:textAllCaps="false"

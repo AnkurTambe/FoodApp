@@ -3,6 +3,7 @@ package com.example.foodapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -15,6 +16,20 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+
+        Toast.makeText(
+            this,
+            "Ensure you have entered proper IP.",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        openDialog()
+
+        reg_cip.setOnClickListener {
+            openDialog()
+
+        }
 
         signup_btn.setOnClickListener {
 
@@ -51,5 +66,17 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this, "Passwords don't not match", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun openDialog() {
+        var exampleDialog = ExampleDialog()
+        exampleDialog.isCancelable = false
+        exampleDialog.show(supportFragmentManager, "example dialog")
+    }
+
+    override fun onBackPressed() {
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
 }

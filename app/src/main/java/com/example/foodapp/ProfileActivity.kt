@@ -4,12 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlin.system.exitProcess
 
 class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,15 +38,28 @@ class ProfileActivity : AppCompatActivity() {
 
         logoutbtn.setOnClickListener {
 
-            var editor = token.edit()
-            editor.putString("logmobno", " ")
-            editor.commit()
+            val alert = AlertDialog.Builder(this)
+            alert.setCancelable(false)
+            alert.setTitle("LogOut!")
+            alert.setMessage("Do you want to logout?")
+            alert.setPositiveButton(
+                "Yes"
+            ) { dialogInterface, i ->
+                var editor = token.edit()
+                editor.putString("logmobno", " ")
+                editor.apply()
 
-            Toast.makeText(this, "Logged Out!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Logged Out!", Toast.LENGTH_SHORT).show()
 
-            var i = Intent(this, MainActivity::class.java)
-            startActivity(i)
-            finish()
+                var i = Intent(this, MainActivity::class.java)
+                startActivity(i)
+                finish()
+            }
+            alert.setNegativeButton(
+                "No"
+            ) { dialogInterface, i -> }
+
+            alert.show()
         }
 
         bill_his_btn.setOnClickListener {

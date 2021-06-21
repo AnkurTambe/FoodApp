@@ -5,5 +5,6 @@ class UserInfo {
         var mobile: String = ""
         var itemid: Int = 0
         var qty: Int = 0
+        var ip: String = ""
     }
 }
