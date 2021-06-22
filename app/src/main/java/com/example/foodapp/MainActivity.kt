@@ -47,8 +47,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        openDialog()
-
         login_cip.setOnClickListener {
             openDialog()
         }
@@ -60,8 +58,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Give Proper Info.", Toast.LENGTH_SHORT).show();
             } else {
                 var url = //
-                "http://" + UserInfo.ip + "/FoodAppPhp/login.php?mobileno=" + login_mobile_no.text.toString() + "&password=" +
-                        login_password.text.toString()
+                    "http://" + UserInfo.ip + "/FoodAppPhp/login.php?mobileno=" + login_mobile_no.text.toString() + "&password=" +
+                            login_password.text.toString()
 
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 Toast.makeText(this, "Logging In, Wait......", Toast.LENGTH_SHORT).show()

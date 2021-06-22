@@ -23,8 +23,6 @@ class RegisterActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT
         ).show()
 
-        openDialog()
-
         reg_cip.setOnClickListener {
             openDialog()
 

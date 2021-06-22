@@ -31,48 +31,37 @@ class SplashActivity : AppCompatActivity() {
 
 //        val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 //        val ipa: String = Formatter.formatIpAddress(wifiManager.connectionInfo.ipAddress)
+        Handler(Looper.getMainLooper()).postDelayed({
+            splash.visibility = View.INVISIBLE
+            dialog.visibility = View.VISIBLE
 
-        if (token.getString("logmobno", " ") != " ") {
+            et1.setText(ipadd?.getString("ipc", " "))
 
-            Handler(Looper.getMainLooper()).postDelayed({
+            b1.setOnClickListener {
+                if (et1.text.isBlank() || et1.text.isEmpty()) {
+                    et1.error = "Give Proper IP"
+                } else {
+                    ipadd!!.edit().putString("ipc", et1.text.toString()).apply()
+                    UserInfo.ip = ipadd.getString("ipc", " ").toString()
 
-                splash.visibility = View.INVISIBLE
-                dialog.visibility = View.VISIBLE
-
-                et1.setText(ipadd?.getString("ipc", " "))
-
-                b1.setOnClickListener {
-                    if (et1.text.isBlank() || et1.text.isEmpty()) {
-                        et1.error = "Give Proper IP"
-                    } else {
-                        ipadd!!.edit().putString("ipc", et1.text.toString()).apply()
-                        UserInfo.ip = ipadd.getString("ipc", " ").toString()
-
-                        Toast.makeText(this, UserInfo.ip, Toast.LENGTH_SHORT).show()
-
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
+                    Toast.makeText(this, UserInfo.ip, Toast.LENGTH_SHORT).show()
                 }
-
-                b2.setOnClickListener {
-                    exitProcess(0)
+                if (token.getString("logmobno", " ") != " ") {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
+            }
 
+            b2.setOnClickListener {
+                exitProcess(0)
+            }
 
-            }, 3000)
-
-
-        } else {
-            Handler(Looper.getMainLooper()).postDelayed({
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }, 3000)
-        }
-
-
+        }, 3000)
     }
 
 }
