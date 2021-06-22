@@ -35,14 +35,14 @@ class SplashActivity : AppCompatActivity() {
             splash.visibility = View.INVISIBLE
             dialog.visibility = View.VISIBLE
 
-            et1.setText(ipadd?.getString("ipc", " "))
+            et1.setText(ipadd?.getString("ipc", ""))
 
             b1.setOnClickListener {
                 if (et1.text.isBlank() || et1.text.isEmpty()) {
                     et1.error = "Give Proper IP"
                 } else {
                     ipadd!!.edit().putString("ipc", et1.text.toString()).apply()
-                    UserInfo.ip = ipadd.getString("ipc", " ").toString()
+                    UserInfo.ip = ipadd.getString("ipc", "").toString()
 
                     Toast.makeText(this, UserInfo.ip, Toast.LENGTH_SHORT).show()
                 }

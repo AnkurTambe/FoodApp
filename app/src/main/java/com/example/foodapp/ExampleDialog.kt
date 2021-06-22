@@ -28,7 +28,7 @@ class ExampleDialog : AppCompatDialogFragment() {
         alert.setTitle("IP Address")
         alert.setMessage("Ensure that this device and the PC(hosting WAMP server) are connected to the same WIFI network.\nEnter the IPv4 Address of the corresponding WLAN.\n ")
         ip = view!!.findViewById(R.id.et_ip)
-        ip.setText(ipadd?.getString("ipc", " "))
+        ip.setText(ipadd?.getString("ipc", ""))
         alert.setPositiveButton(
             "Proceed"
         ) { dialogInterface, i ->
@@ -42,14 +42,14 @@ class ExampleDialog : AppCompatDialogFragment() {
             } else {
 
                 ipadd!!.edit().putString("ipc", ip.text.toString()).apply()
-                UserInfo.ip = ipadd?.getString("ipc", " ").toString()
+                UserInfo.ip = ipadd?.getString("ipc", "").toString()
             }
             Toast.makeText(activity, UserInfo.ip, Toast.LENGTH_SHORT).show()
 
         }
         alert.setNegativeButton(
-            "Exit"
-        ) { dialogInterface, i -> exitProcess(0) }
+            "Cancel"
+        ) { dialogInterface, i ->  }
 
 
         return alert.create()
