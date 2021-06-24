@@ -7,6 +7,14 @@ WAMP-- Windows, Apache, MySQL, PHP
 
 *APK is the Release section*
 
+Screenshots of the App:
+
+![img1](https://user-images.githubusercontent.com/76391639/123266601-d0dd6100-d519-11eb-85a7-3fc06240c545.jpg)
+![img2](https://user-images.githubusercontent.com/76391639/123266624-d470e800-d519-11eb-9805-13689737d2dc.jpg)
+![img3](https://user-images.githubusercontent.com/76391639/123266643-d9359c00-d519-11eb-9b4b-bf310de4503b.jpg)
+![img4](https://user-images.githubusercontent.com/76391639/123266660-dd61b980-d519-11eb-8c86-6eeadffd8e3e.jpg)
+![img5](https://user-images.githubusercontent.com/76391639/123266683-e0f54080-d519-11eb-8230-129ed8763832.jpg)
+
 The App is based on WAMP local server so, to see the full execution of the app you have to first do following things:
 1. Download WAMP server and install it on your PC. Clone the repo.
 2. Go to the file of WAMP(wamp64) and, then to the 'www' folder located inside it. Generally- C:\wamp64\www
